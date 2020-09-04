@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'myapp/img/favicon.ico' %}" />
+        <title> Sunny Boogie </title>
+        <link rel="icon" type="image/x-icon" href="{% static 'myapp/img/logos/mini_logo_png.png' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -22,23 +22,45 @@
       
       
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="{% static 'myapp/img/navbar-logo.svg' %}" alt="" /></a>
+              <a class="navbar-brand" href="#">
+                    <img src="{% static 'myapp/img/logos/full_logo_png.png' %}" width="200" alt="" />
+                  </a>
+                    
+                </div>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'mypage' %}">Mypage</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'myportfolio' %}">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'like' %}">Likes</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'purchase' %}">Purchase</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'contact' %}">Contact</a></li>
-                    </ul>
-                </div>
+                        
+                        
+         
+                
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'mypage' %}">Mypage</a></li>
+                </li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'myportfolio' %}">Closet</a></li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'signin' %}">Login</a>
+                </li>
+                {% endif %}
+                
+                <li class="nav-item">
+                  <a class="nav-item"><a class="nav-link js-scroll-trigger"  href="{% url 'signup' %}">Signup</a>
+                </li>
+            
+            </ul>
+        </div>
             </div>
+        
         </nav>
 
         {% block content %}

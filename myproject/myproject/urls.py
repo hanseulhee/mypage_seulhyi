@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myapp.views.mypage, name = 'mypage'),
     path('myportfolio', myapp.views.myportfolio, name = 'myportfolio'),
-    path('like', myapp.views.like, name = 'like'),
-    path('purchase', myapp.views.purchase, name = 'purchase'),
-    path('contact', myapp.views.contact, name = 'contact'),
+    path('signin', myapp.views.signin, name = 'signin'),
+    path('signup', myapp.views.signup, name = 'signup'),
+    
+
 ]
