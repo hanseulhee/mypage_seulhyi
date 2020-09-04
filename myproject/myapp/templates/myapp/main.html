@@ -1,15 +1,18 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>SUNNY BOOGIE</title>
-    <link rel="stylesheet" href="mainstyle.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
+  
   <body>
-
-    <a href="main.html"><img class="logo" src="로고.jpg" alt=""></a>
+    {% block content %}
+    <a href="main.html"><img class="logo" src="{% static 'myapp/img/main/로고.jpg' %}" alt=""></a>
     <div class="topnav">
       <input type="text" placeholder="Search..">
     </div>
@@ -30,16 +33,16 @@
     </div>
 
     <div class="closet">
-        <img src="1.jpg" />
-        <img src="2.jpg" />
-        <img src="3.jpg" />
-        <img src="1.jpg" />
-        <img src="2.jpg" />
-        <img src="3.jpg" />
+        <img src="{% static 'myapp/img/main/1.jpg' %}"/>
+        <img src="{% static 'myapp/img/main/2.jpg' %}"/>
+        <img src="{% static 'myapp/img/main/로고.jpg' %}"/>
+        <img src="{% static 'myapp/img/main/closet.jpg' %}"/>
+        <img src="{% static 'myapp/img/main/2.jpg' %}"/>
+        <img src="{% static 'myapp/img/main/3.jpg' %}"/>
     </div>
 
     <div class="morecloset">
-      <img src="closet.jpg" alt="Avatar" class="closetimage">
+      <img src="{% static 'myapp/img/main/closet.jpg' %}" alt="Avatar" class="closetimage">
       <div class="overlay">
         <a href="#" class="icon" title="User Profile">
           <i class="fa fa-user"></i>
@@ -48,4 +51,5 @@
     </div>
 
   </body>
+  {% endblock %}
 </html>

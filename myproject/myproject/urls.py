@@ -19,10 +19,11 @@ import myapp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', myapp.views.mypage, name = 'mypage'),
+    path('mypage', myapp.views.mypage, name = 'mypage'),
     path('myportfolio', myapp.views.myportfolio, name = 'myportfolio'),
     path('signin', myapp.views.signin, name = 'signin'),
     path('signup', myapp.views.signup, name = 'signup'),
+    path('', myapp.views.main, name = 'main'),
     
 
 ]

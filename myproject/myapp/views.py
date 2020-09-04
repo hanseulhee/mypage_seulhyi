@@ -6,6 +6,9 @@ from django.shortcuts import render
 def mypage(request):
     return render(request, 'myapp/mypage.html')
 
+def main(request):
+    return render(request, 'myapp/main.html')
+
 def myportfolio(request):
     return render(request, 'myapp/myportfolio.html')
 
