@@ -9,11 +9,9 @@ def mypage(request):
 def myportfolio(request):
     return render(request, 'myapp/myportfolio.html')
 
-def like(request):
-    return render(request, 'myapp/like.html')
+def signin(request):
+    return render(request, 'myapp/signin.html')
 
-def purchase(request):
-    return render(request, 'myapp/purchase.html')
+def signup(request):
+    return render(request, 'myapp/signup.html')
 
-def contact(request):
-    return render(request, 'myapp/contact.html')
